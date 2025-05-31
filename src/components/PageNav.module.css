@@ -1,0 +1,16 @@
+/* .active {
+  text-decoration: none;
+  color: red;
+} */
+
+.nav {
+  background-color: bisque;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
