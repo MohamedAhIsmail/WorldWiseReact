@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import styles from "./CityItem.module.css";
 
 const formatDate = (date) =>
