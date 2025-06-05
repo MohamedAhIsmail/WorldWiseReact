@@ -35,42 +35,6 @@
         "lng": 13.376933665713324
       },
       "id": "98443197"
-    },
-    {
-      "id": "176a",
-      "cityName": "Erfurt",
-      "country": "Germany",
-      "emoji": "🇩🇪",
-      "date": "2025-06-05T04:39:10.662Z",
-      "notes": "new",
-      "position": {
-        "lat": "50.969195941471064",
-        "lng": "11.035144579790572"
-      }
-    },
-    {
-      "id": "2b19",
-      "cityName": "Unstrut-Hainich",
-      "country": "Germany",
-      "emoji": "🇩🇪",
-      "date": "2025-06-05T04:39:46.886Z",
-      "notes": "",
-      "position": {
-        "lat": "51.13829440787336",
-        "lng": "10.464140867212341"
-      }
-    },
-    {
-      "id": "e479",
-      "cityName": "Andorra la Vella",
-      "country": "Andorra",
-      "emoji": "🇦🇩",
-      "date": "2025-06-05T04:46:19.873Z",
-      "notes": "",
-      "position": {
-        "lat": "42.502760342152115",
-        "lng": "1.5171093770389723"
-      }
     }
   ]
 }

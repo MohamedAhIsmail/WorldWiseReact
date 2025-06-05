@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { createContext, useContext, useEffect, useState } from "react";
+import City from "../components/City";
 
 const BASE_URL = "http://localhost:8000";
 
@@ -55,9 +56,24 @@ function CitiesProvider({ children }) {
       const data = await res.json();
       console.log(data);
 
-      setCities(cities=> [...cities, data])
+      setCities((cities) => [...cities, data]);
     } catch (error) {
-      alert("There was an error loading data...");
+      alert("There was an error creating city...");
+    } finally {
+      setIsLoding(false);
+    }
+  }
+
+  async function deleteCity(id) {
+    try {
+      setIsLoding(true);
+      await fetch(`${BASE_URL}/cities/${id}`, {
+        method: "DELETE",
+      });
+
+      setCities((cities) => cities.filter((city) => city.id !== id));
+    } catch (error) {
+      alert("There was an error deleting city...");
     } finally {
       setIsLoding(false);
     }
@@ -71,6 +87,7 @@ function CitiesProvider({ children }) {
         currentCity,
         getCity,
         createCity,
+        deleteCity
       }}
     >
       {children}
