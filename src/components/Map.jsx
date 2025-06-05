@@ -11,7 +11,7 @@ import {
   useMap,
   useMapEvents,
 } from "react-leaflet";
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { useCities } from "../contexts/CitiesContext";
 import { useGeolocation } from "../hooks/useGeoLocation";
 import Button from "./Button";
@@ -26,8 +26,8 @@ function Map() {
     position: geoLocationPosition,
   } = useGeolocation();
 
-  const [lat, lng] = useUrlPostion()
-  
+  const [lat, lng] = useUrlPostion();
+
   const [searchParams] = useSearchParams();
   const mapLat = searchParams.get("lat");
   const mapLng = searchParams.get("lng");
@@ -59,7 +59,7 @@ function Map() {
           url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
         />
         {cities.map((city) => (
-          <>
+          <Fragment key={city.id}>
             <Marker
               position={[city.position.lat, city.position.lng]}
               key={city.id}
@@ -69,7 +69,7 @@ function Map() {
                 <span>{city.cityName}</span>
               </Popup>
             </Marker>
-          </>
+          </Fragment>
         ))}
         <ChangeCenter position={mapPosition} />
         <DetectClick />
